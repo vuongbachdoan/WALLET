@@ -1,7 +1,7 @@
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { Button, Text, Icon, FormControl, Input, WarningOutlineIcon, Pressable } from 'native-base';
+import { Button, Icon, FormControl, Input, WarningOutlineIcon, Pressable } from 'native-base';
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Logo from '../assets/icons';
 
 const styles = StyleSheet.create({
@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 24,
-        lineHeight: '30px',
         marginBottom: 20,
         fontWeight: 500,
         color: '#2F1155',
         textAlign: 'center',
+        lineHeight: '30px'
     },
     input: {
         height: 54,
@@ -83,11 +83,11 @@ export const Login = ({ navigation }) => {
             >
                 <View style={styles.container}>
 
-                <Text style={styles.title}>🥷 Welcome back to <Text fontWeight={'bold'}>Suriken</Text></Text>
+                    <Text style={styles.title}>🥷 Welcome back to <Text style={{fontWeight: 'bold'}}>Suriken</Text></Text>
                     <Logo width={75} height={75} />
                     <View style={{ width: '100%' }}>
                         {/* Social Buttons */}
-                        <Text textAlign='center' marginBottom='24px'>Sign-in with</Text>
+                        <Text style={{textAlign: 'center', marginBottom: 24}}>Sign-in with</Text>
                         <View style={{
                             display: 'flex',
                             flexDirection: 'row',
@@ -103,7 +103,7 @@ export const Login = ({ navigation }) => {
                                 <Text fontSize='md'>Google</Text>
                             </Button>
                         </View>
-                        <Text textAlign='center' marginBottom='24px'>or using</Text>
+                        <Text style={{textAlign: 'center', marginBottom: 24}}>or using</Text>
                         <View style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -163,7 +163,7 @@ export const Login = ({ navigation }) => {
                         </Button>
 
                         <TouchableOpacity style={{ marginTop: 24 }} onPress={() => navigation.navigate('Register')}>
-                            <Text color={'purple.500'} textAlign="center">Don't have an account? Register here</Text>
+                            <Text style={{textAlign: 'center', color: '#2F2F2F'}}>Don't have an account? Register here</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

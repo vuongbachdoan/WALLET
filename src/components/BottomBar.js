@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Button, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { Login } from '../screens/Login';
 import { Home } from '../screens/Home';
 import { Register } from '../screens/Register';
@@ -15,58 +15,80 @@ const Stack = createNativeStackNavigator();
 
 export const BottomBar = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#080A0C',
-        },
-        headerTintColor: '#FFF'
-      }}
-    >
-      <Stack.Screen
-        name="Wellcome1"
-        component={Wellcome1}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Wellcome2"
-        component={Wellcome2}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Wellcome3"
-        component={Wellcome3}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Wellcome4"
-        component={Wellcome4}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Wellcome5"
-        component={Wellcome5}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Register"
-        component={Register}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Home"
-        component={Home}
-      />
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#080A0C',
+          },
+          headerTintColor: '#FFF'
+        }}
+      >
+        <Stack.Screen
+          name="Wellcome1"
+          component={Wellcome1}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="Wellcome2"
+          component={Wellcome2}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Wellcome3"
+          component={Wellcome3}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Wellcome4"
+          component={Wellcome4}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Wellcome5"
+          component={Wellcome5}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{
+            headerShown: false,
+            gestureDirection: 'inverted'
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+        />
 
-      <Stack.Screen
-        name="Import From Seed"
-        component={ImportFromSeed}
-      />
-    </Stack.Navigator>
+        <Stack.Screen
+          name="Import From Seed"
+          component={ImportFromSeed}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };

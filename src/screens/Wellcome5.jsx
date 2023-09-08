@@ -45,7 +45,7 @@ export const Wellcome5 = ({ navigation }) => {
                 >
                     <Text style={{ color: '#FFF', fontSize: 16, fontWeight: 600 }}>Import Using Seed Phrase</Text>
                 </Button>
-                <GradientButton/>
+                <GradientButton text='Create a New Wallet'/>
             </View>
         </View>
     );

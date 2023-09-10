@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { NativeBaseProvider } from "native-base";
-import { BottomBar } from './src/components/BottomBar';
+import { MainNavigator } from './src/navigator/MainNavigator';
 
 const App = () => {
   return (
-      <NativeBaseProvider isSSR={false}>
-        <BottomBar />
+      <NativeBaseProvider>
+        <MainNavigator />
       </NativeBaseProvider>
   );
 };

@@ -2,7 +2,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Button, Icon, FormControl, Input, WarningOutlineIcon, Pressable } from 'native-base';
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, KeyboardAvoidingView, ScrollView } from 'react-native';
-import Logo from '../assets/icons';
+import Logo from '../assets/icons/icons';
 
 const styles = StyleSheet.create({
     container: {

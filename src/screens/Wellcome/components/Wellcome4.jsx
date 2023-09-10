@@ -1,19 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Animated } from "react-native";
 import GradientText from "react-native-gradient-texts";
 import { Button } from 'native-base';
-import DecorImg from '../assets/illus.png';
+import DecorImg from '../../../assets/images/rocket.png';
 
-export const Wellcome2 = ({ navigation }) => {
+export const Wellcome4 = ({ navigation }) => {
     const [timeoutId, setTimeoutId] = React.useState(null);
     React.useEffect(() => {
         const id = setTimeout(() => {
-            navigation.navigate('Wellcome3')
+            navigation.navigate('Wellcome5')
         }, 3000)
         setTimeoutId(id);
-    }, [])
+    }, []);
+
+    const fadeAnim = React.useRef(new Animated.Value(0)).current;
+
+    React.useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1000,
+            useNativeDriver: true,
+        }).start();
+    }, [fadeAnim]);
 
     return (
+        <Animated.View style={{ flex: 1, opacity: fadeAnim }}>
         <View style={styles.container}>
             <Image
                 width={295}
@@ -23,11 +34,11 @@ export const Wellcome2 = ({ navigation }) => {
             <Text style={{
                 color: '#FFF',
                 fontSize: 40,
-                fontWeight: 600
+                fontWeight: 600,
             }}
-            >Property</Text>
+            >Convenient</Text>
             <GradientText
-                text={"Diversity"}
+                text={"Banking"}
                 fontSize={65}
                 fontWeight={600}
                 isGradientFill
@@ -46,13 +57,14 @@ export const Wellcome2 = ({ navigation }) => {
                     backgroundColor='#202832'
                     onPress={() => {
                         clearTimeout(timeoutId);
-                        navigation.navigate('Wellcome3');
+                        navigation.navigate('Wellcome5');
                     }}
                 >
                     <Text style={{ color: '#FFF', fontSize: 16, fontWeight: 600 }}>Next</Text>
                 </Button>
             </View>
         </View>
+        </Animated.View>
     );
 };
 

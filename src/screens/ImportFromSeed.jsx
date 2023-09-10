@@ -11,8 +11,13 @@ export const ImportFromSeed = ({ navigation }) => {
     const [passwordInvalid, setPasswordInvalid] = React.useState(false);
     const [passwordConfirmInvalid, setPasswordConfirmInvalid] = React.useState(false);
     const [isEnabled, setIsEnabled] = React.useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const [canImport, setCanImport] = React.useState(true);
+    
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+    const handleImport = () => {
+        navigation.navigate('Home')
+    }
 
     return (
         <KeyboardAvoidingView
@@ -136,7 +141,7 @@ export const ImportFromSeed = ({ navigation }) => {
                             width: '100%'
                         }}
                     >
-                        <GradientButton text='Import' colors={canImport ? ['#8AD4EC', '#EF96FF', '#FF56A9', '#FFAA6C'] : ['#101419', '#101419']} color={canImport ? '#FFF' : '#384657'} />
+                        <GradientButton onPress={handleImport} text='Import' colors={canImport ? ['#8AD4EC', '#EF96FF', '#FF56A9', '#FFAA6C'] : ['#101419', '#101419']} color={canImport ? '#FFF' : '#384657'} />
                     </View>
                 </View>
             </ScrollView>
